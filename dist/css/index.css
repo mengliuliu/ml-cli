@@ -1,0 +1,14 @@
+/*!*****************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/style.css ***!
+  \*****************************************************************/
+.test {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+
+.img {
+    width: 200px;
+    height: 200px;
+    background-image: url(../25ccddf8c89ed7e351b4.jpg);
+}
