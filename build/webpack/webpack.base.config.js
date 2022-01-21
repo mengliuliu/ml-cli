@@ -36,20 +36,31 @@ module.exports = {
               publicPath: "../",
             },
           },
-          "css-loader",
+          {
+            loader: "css-loader",
+            options: {
+              //   esModule: false, //解决背景图乱码，生成多余文件问题
+            },
+          },
         ],
       },
       {
         test: /\.(png|jpg|gif)$/,
         use: [
           {
-            loader: "url-loader",
+            loader: "file-loader",
             options: {
-            //   limit: 2000,
+              //   limit: 2000,
               name: "img/[name].[hash:8].[ext]",
+              esModule: false,
             },
           },
         ],
+        type: "javascript/auto",
+      },
+      {
+        test: /\.html$/i,
+        loader: "html-loader",
       },
       //       {
       //         test: /\.less$/,
