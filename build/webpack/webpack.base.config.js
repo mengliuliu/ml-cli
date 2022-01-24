@@ -1,15 +1,23 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const FriendlyErrorWebpackPlugin = require("friendly-errors-webpack-plugin");
+const webpackBar = require("webpackbar");
 const webpack = require("webpack");
 
 module.exports = {
   entry: {
-    path: path.resolve(__dirname, "../src/index"),
+    path: path.resolve(__dirname, "../../src/index"),
   },
   output: {
-    path: path.resolve(__dirname, "../dist"),
+    path: path.resolve(__dirname, "../../dist"),
     filename: "bundle.js",
+  },
+  resolve: {
+    extensions: [".js", ".jsx", ".ts", ".tsx", "css", "less"],
+    alias: {
+      "@src": `${process.cwd()}/src`,
+    },
   },
   // node: {
   //     global: false,
@@ -41,6 +49,26 @@ module.exports = {
             options: {
               //   esModule: false, //解决背景图乱码，生成多余文件问题
             },
+          },
+        ],
+      },
+      {
+        test: /\.less$/i,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: "../",
+            },
+          },
+          {
+            loader: "css-loader",
+            options: {
+              //   esModule: false, //解决背景图乱码，生成多余文件问题
+            },
+          },
+          {
+            loader: "less-loader",
           },
         ],
       },
@@ -88,10 +116,18 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: "test html-webpack-plugin",
-      template: path.resolve(__dirname, "../public/index.html"),
+      template: path.resolve(__dirname, "../../public/index.html"),
     }),
     new MiniCssExtractPlugin({
       filename: "css/index.css",
+    }),
+    // 错误提示插件，用于在控制台展示比较友好的错误提示
+    new FriendlyErrorWebpackPlugin({
+      clearConsole: true,
+    }),
+    new webpackBar({
+      name: "Client 代码编译",
+      color: "#d3adf7",
     }),
     //   new webpack.DefinePlugin({
     //     "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV),

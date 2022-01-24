@@ -4,7 +4,7 @@
   "description": "搭建一个脚手架",
   "main": "index.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development node build/scripts/start.js",
+    "start": "cross-env NODE_ENV=development node build/scripts/start.js",
     "build": "webpack-dev-server --config ./build/webpack.dev.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -22,8 +22,10 @@
     "chalk": "^4.1.0",
     "css-loader": "^6.5.1",
     "file-loader": "^6.2.0",
+    "friendly-errors-webpack-plugin": "^1.7.0",
     "html-loader": "^3.1.0",
     "html-webpack-plugin": "^5.5.0",
+    "less-loader": "^10.2.0",
     "mini-css-extract-plugin": "^2.5.2",
     "ora": "^5.4.0",
     "rimraf": "^3.0.2",
@@ -31,6 +33,7 @@
     "wait-on": "^6.0.0",
     "webpack": "^5.66.0",
     "webpack-cli": "^4.9.1",
-    "webpack-dev-server": "^4.7.3"
+    "webpack-dev-server": "^4.7.3",
+    "webpackbar": "^5.0.2"
   }
 }

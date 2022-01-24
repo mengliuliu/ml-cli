@@ -13,6 +13,7 @@ function startApp() {
 
   // 启动编译
   const compiler = webpack(devWebpackConfig); // 构建 renderer 编译器实例
+  console.log("编译完成");
   const devServer = new WebpackDevServer(devWebpackConfig.devServer, compiler);
   const port = devWebpackConfig.devServer.port;
 
