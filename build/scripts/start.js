@@ -9,6 +9,7 @@ const devWebpackConfig = require("../webpack/webpack.dev.config");
 startApp();
 
 function startApp() {
+  console.log('__dirname', __dirname)
   spinner.info(`环境 ${process.env.NODE_ENV}`);
 
   // 启动编译
@@ -18,12 +19,6 @@ function startApp() {
   const port = devWebpackConfig.devServer.port;
 
   // 执行 webpack-dev-server 监听
-  //   devServer.listen(port, (err) => {
-  //     if (err) {
-  //       return spinner.fail(`编译 renderer 代码失败，error：${err}`);
-  //     }
-  //   });
-
   devServer.startCallback(() => {
     console.log(`Successfully started server on http://localhost:${port}`);
   });

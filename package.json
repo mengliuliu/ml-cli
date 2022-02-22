@@ -5,9 +5,13 @@
   "main": "index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=development node build/scripts/start.js",
-    "build": "webpack-dev-server --config ./build/webpack.dev.config.js",
+    "build": "cross-env NODE_ENV=production node build/scripts/build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mengliuliu/ml-cli.git"

@@ -12,6 +12,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "../../dist"),
     filename: "bundle.js",
+    clean: true,
   },
   resolve: {
     extensions: [".js", ".jsx", ".ts", ".tsx", "css", "less"],
@@ -98,18 +99,6 @@ module.exports = {
       //         test: /\.(js|jsx|ts|tsx)$/,
       //         use: ["babel-loader"],
       //         exclude: /node_modules/,
-      //       },
-      //       {
-      //         test: /\.(png|jpg|gif)$/i,
-      //         use: [
-      //           {
-      //             loader: "url-loader",
-      //             options: {
-      //               limit: 8192,
-      //             },
-      //           },
-      //         ],
-      //         type: "javascript/auto",
       //       },
     ],
   },

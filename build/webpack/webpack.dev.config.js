@@ -12,7 +12,7 @@ module.exports = merge(BaseConfig, {
       // directory: path.join(__dirname, "../../src"),
     },
     hot: true,
-    open: false,
+    open: true,
     host: config.dev.host,
     port: config.dev.port,
     // proxy: config.proxy,
