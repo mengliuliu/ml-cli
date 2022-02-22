@@ -24,6 +24,7 @@
   "homepage": "https://github.com/mengliuliu/ml-cli#readme",
   "devDependencies": {
     "chalk": "^4.1.0",
+    "cross-env": "^7.0.3",
     "css-loader": "^6.5.1",
     "file-loader": "^6.2.0",
     "friendly-errors-webpack-plugin": "^1.7.0",
@@ -33,6 +34,8 @@
     "mini-css-extract-plugin": "^2.5.2",
     "ora": "^5.4.0",
     "rimraf": "^3.0.2",
+    "ts-loader": "^9.2.6",
+    "typescript": "^4.5.5",
     "url-loader": "^4.1.1",
     "wait-on": "^6.0.0",
     "webpack": "^5.66.0",
